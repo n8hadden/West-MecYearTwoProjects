@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compressor App</title>
+</head>
+<body>
+    <h1>File Compressor App</h1>
+    <form id="fileForm" action="/upload" method="POST">
+        <label for="file">Upload File: </label>
+        <input type="file" name="file">
+        <input type="submit">
+    </form>
+
+    <a id="dlink" href="path_to_file" download="proposed_file_name">Download</a>
+
+    <script>
+        const downloadLink = document.getElementById('dlink');
+        downloadLink.style.display = "none";
+        const form = document.getElementById('fileForm');
+        form.onsubmit(() => {
+            downloadLink.style.display = "block";
+        })
+    </script>
+
+
+</body>
+</html>
