@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <title>Register</title>
+</head>
+
+<body>
+  <div id="pageContainer" class="bg-zinc-800 w-screen h-screen">
+    <div class="mb-8 bg-slate-700 px-6 py-20 text-center text-neutral-200">
+      <h1 class="mb-6 text-5xl font-bold">List of Users</h1>
+      <a href="/addUser" class="font-medium text-blue-300 hover:underline">Register Now</a>
+    </div>
+    <div class="flex items-center justify-center">
+
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3">
+                User Name
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Email
+              </th>
+              <th scope="col" class="px-6 py-3">
+
+              </th>
+              <th scope="col" class="px-6 py-3">
+
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach((user) => { %>
+              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <%= user.name %>
+                </th>
+                <td class="px-6 py-4">
+                  <%= user.email %>
+                </td>
+                <td class="px-6 py-4">
+                  <form action="/edit/<%= user._id %>" method="get">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                  </form>
+                </td>
+                <td class="px-6 py-4">
+                  <form action="/delete/<%= user._id %>" method="post">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
