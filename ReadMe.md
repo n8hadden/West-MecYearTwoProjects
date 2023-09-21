@@ -28,3 +28,18 @@ Follow these steps to set up and run the project locally:
 
    ```bash
    git clone https://github.com/yourusername/registration-form-app.git
+
+2. **Navigate to the project directory**:
+
+3. **Install the project dependencies**:
+
+4. **Run with npm start**
+
+
+### Usage
+
+1. **Configure MongoDB connection** by replacing the MongoDB connection URL in the code:
+
+```javascript
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.tckbzcq.mongodb.net/RegistrationForm')
+
